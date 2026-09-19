@@ -60,6 +60,10 @@ Both URLs reach the same gateway and the same 1576+ data sources. The
 only difference is which pack's tools are listed **directly**; `ask_pipeworx`
 reaches all of them from either one.
 
+## No MCP client? Call it over HTTP
+
+This pack takes your own API key (`_apiKey`) — we don't front one for it, so there's no curl here that would run without it. Inspect any tool: `GET https://gateway.pipeworx.io/v1/tools/apify_run_actor`. Find one: `POST https://gateway.pipeworx.io/v1/tools/search_packs` with `{"query":"..."}`.
+
 ## Standalone (no gateway account)
 
 This package also runs as a local stdio MCP server — no Pipeworx account, no
