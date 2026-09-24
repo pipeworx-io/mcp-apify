@@ -3,7 +3,7 @@
   "name": "io.github.pipeworx-io/apify",
   "title": "Apify",
   "description": "Apify MCP — run web-scraping Actors and fetch their dataset results.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "websiteUrl": "https://pipeworx.io/packs/apify",
   "repository": {
     "url": "https://github.com/pipeworx-io/mcp-apify",
