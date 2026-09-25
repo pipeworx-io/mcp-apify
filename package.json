@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-apify",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Apify MCP — run web-scraping Actors and fetch their dataset results.",
   "type": "module",
   "main": "src/index.ts",
@@ -26,7 +26,7 @@
     "@cloudflare/workers-types": "^4.20260405.1"
   },
   "pipeworx": {
-    "sourceHash": "v1-cfcf152c92c1f12bb776b5f871a24f0ae7b7e0e3b39a0c135ad64a61b3a0bf2e",
-    "sourceCommit": "60f04b68c347e970c6be94a53439d1364061fc06"
+    "sourceHash": "v1-30ce28b850fefdb1981f52fe2856d5ef6123c7d4716736f2c4312a9321aeadee",
+    "sourceCommit": "dca20ba6e13a9aa1c9f2918fc2ddaffe4cc30e5c"
   }
 }
