@@ -1,0 +1,81 @@
+[
+  {
+    "name": "apify_run_actor",
+    "description": "Run an Apify Actor (a cloud scraping/automation program) and get its dataset results in a single blocking call. The run is capped at 300 seconds. Pass the Actor input as an `input` object — its shape depends on the Actor. Example: apify_run_actor({ actorId: \"apify~web-scraper\", input: { startUrls: [{ url: \"https://example.com\" }] }, _apiKey: \"your-token\" }). Browse Actors at https://apify.com/store.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "actorId": {
+          "type": "string",
+          "description": "Actor identifier. Use the tilde form \"username~actor-name\" (e.g. \"apify~web-scraper\"), a \"username/actor-name\" form (auto-normalized to tilde), or the raw Actor ID."
+        },
+        "input": {
+          "type": "object",
+          "description": "The Actor input JSON. Passed as the run INPUT. Shape is Actor-specific — see the Actor page in the Apify Store. Optional; defaults to {}."
+        },
+        "_apiKey": {
+          "type": "string",
+          "description": "Your Apify API token (get one at https://console.apify.com/sign-up, Settings → Integrations)."
+        }
+      },
+      "required": [
+        "actorId",
+        "_apiKey"
+      ]
+    }
+  },
+  {
+    "name": "apify_scrape_url",
+    "description": "Scrape a single web page (or crawl from it) and get clean, RAG-friendly markdown content. Convenience wrapper around the \"apify~website-content-crawler\" Actor. Example: apify_scrape_url({ url: \"https://docs.apify.com/api/v2\", _apiKey: \"your-token\" }).",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string",
+          "description": "The URL to scrape, e.g. \"https://example.com/article\"."
+        },
+        "_apiKey": {
+          "type": "string",
+          "description": "Your Apify API token (get one at https://console.apify.com/sign-up)."
+        }
+      },
+      "required": [
+        "url",
+        "_apiKey"
+      ]
+    }
+  },
+  {
+    "name": "apify_dataset_items",
+    "description": "Fetch items from an existing Apify dataset (e.g. the output of a prior Actor run). Example: apify_dataset_items({ datasetId: \"abc123\", limit: 50, _apiKey: \"your-token\" }).",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "datasetId": {
+          "type": "string",
+          "description": "The dataset ID (or username~dataset-name). Returned as `defaultDatasetId` from an Actor run."
+        },
+        "limit": {
+          "type": "number",
+          "description": "Maximum number of items to return. Default 100 (Apify itself has no default limit; we cap for readability)."
+        },
+        "offset": {
+          "type": "number",
+          "description": "Number of items to skip from the start. Default 0."
+        },
+        "clean": {
+          "type": "boolean",
+          "description": "If true (default), return only non-empty items and skip hidden fields."
+        },
+        "_apiKey": {
+          "type": "string",
+          "description": "Your Apify API token (get one at https://console.apify.com/sign-up)."
+        }
+      },
+      "required": [
+        "datasetId",
+        "_apiKey"
+      ]
+    }
+  }
+]
